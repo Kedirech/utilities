@@ -502,6 +502,15 @@ describe("intersection", function() {
     expect(_.intersection(stooges, leaders)).to.eql(['moe']);
   });
 });
+describe("intersection", function() {
+  it("should take the set intersection of multiple arrays", function() {
+    var stooges = ['moe', 'curly', 'larry', "jo"];
+    var leaders = ['moe', 'groucho', "jo"];
+    var leaders2 = ['moe', 'curly', "jo"];
+    var leaders3 = ['moe', 'larry', "jo"];
+    expect(_.intersection(stooges, leaders, leaders2, leaders3)).to.eql(['moe', 'jo']);
+  });
+});
 
 describe("difference", function() {
   it("should return the difference between two arrays", function() {
